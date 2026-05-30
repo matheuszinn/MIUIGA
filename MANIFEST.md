@@ -1,4 +1,4 @@
-# Web 1.0 UI Manifest (MIUIGA)
+# Make Internet UI Great Again (MIUIGA)
 
 ## The Vision
 To reclaim the internet from the era of "clean," "flat," and "minimalist" design. This manifest defines a framework that is unapologetically quirky, modular, and tactile.
