@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIUIGA Framework - The Deep Retro Experience</title>
+    <link rel="stylesheet" href="src/styles/core.css">
+    <style>
+        /* Specific page adjustments for the frameset look */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Handled by frameset container */
+        }
+        .nav-item {
+            width: 150px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .construction-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-stars"> <!-- Default background -->
+
+    <div class="frameset-container">
+        
+        <!-- LEFT FRAME: NAVIGATION & WIDGETS -->
+        <div class="frame-left retro-outset">
+            <center>
+                <img src="https://cyber.dabamos.de/88x31/miuiga_logo_placeholder.gif" alt="MIUIGA" style="margin-top: 10px; background: #000; padding: 5px;">
+                <h2 style="font-size: 18px; color: blue;">MENU</h2>
+                <hr class="rainbow-bar">
+            </center>
+
+            <div class="nav-item">
+                <a href="#" class="retro-button" style="width: 100%;">HOME</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="retro-button" style="width: 100%;">SITEMAP</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="retro-button" style="width: 100%;">RESOURCES</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="retro-button" style="width: 100%;">GUESTBOOK</a>
+            </div>
+
+            <center style="margin-top: 30px;">
+                <div class="player-box">
+                    <div id="player-status">STOPPED</div>
+                    <div class="visualizer">
+                        <div class="vis-bar"></div>
+                        <div class="vis-bar"></div>
+                        <div class="vis-bar"></div>
+                        <div class="vis-bar"></div>
+                        <div class="vis-bar"></div>
+                    </div>
+                    <div class="player-controls">
+                        <span id="player-play" class="retro-button" style="font-size: 8px;">PLAY</span>
+                        <span id="player-stop" class="retro-button" style="font-size: 8px;">STOP</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <font size="2"><b>SELECT THEME:</b></font><br>
+                    <button class="retro-button bg-toggle" data-bg="bg-stars" style="font-size: 9px;">STARS</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-paper" style="font-size: 9px;">PAPER</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-clouds" style="font-size: 9px;">CLOUDS</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-marble" style="font-size: 9px;">MARBLE</button>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <img src="https://cyber.dabamos.de/88x31/netscape_now.gif" width="88" height="31">
+                    <br>
+                    <img src="https://cyber.dabamos.de/88x31/internet_explorer.gif" width="88" height="31" style="margin-top: 5px;">
+                </div>
+            </center>
+        </div>
+
+        <!-- MAIN FRAME: CONTENT -->
+        <div class="frame-main bg-stars">
+            
+            <div class="retro-outset" style="text-align: center; margin-bottom: 20px;">
+                <h1 style="margin: 0;"><font color="red">M</font>I<font color="blue">U</font>I<font color="green">G</font>A <font color="orange">V2.0</font></h1>
+                <p class="blink" style="background: yellow; display: inline-block; padding: 2px 10px; border: 1px solid black;">
+                    *** THE DEFINITIVE WEB 1.0 FRAMEWORK ***
+                </p>
+            </div>
+
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    MIUIGA DEEP RETRO UPDATE RELEASED! | NEW THEMES ADDED! | CHECK OUT THE RAINBOW BARS! | DON'T FORGET TO SIGN THE GUESTBOOK! | 100% PURE HTML/CSS/JS!
+                </div>
+            </div>
+
+            <div class="retro-outset" style="margin-top: 20px;">
+                <h2>Welcome to my Digital Fortress!</h2>
+                <div class="retro-hr"></div>
+                
+                <p>
+                    You have entered the <b>MIUIGA DEEP RETRO</b> experience. This framework is the result of extensive 
+                    archaeological research into the Geocities era. No rounded corners, no flat design, just pure 
+                    3D bevels and clashing textures.
+                </p>
+
+                <div class="retro-inset" style="padding: 15px;">
+                    <p><b>WEBMASTER NOTES:</b></p>
+                    <ul>
+                        <li>Frameset layout for that authentic navigation feel.</li>
+                        <li>Pixel-perfect 88x31 badges from archived collections.</li>
+                        <li>High-contrast tiled backgrounds (Toggle them in the menu!).</li>
+                        <li>Custom scrollbars styled after classic browser UI.</li>
+                    </ul>
+                </div>
+
+                <div class="construction-box">
+                    <img src="https://pixelmoondust.neocities.org/backgrounds/themed/stars/starfield_1.gif" style="display:none;"> <!-- Preload concept -->
+                    <img src="https://cyber.dabamos.de/88x31/under_construction.gif" alt="Under Construction">
+                    <div>
+                        <b class="blink">SITE UNDER CONSTRUCTION!</b><br>
+                        <font size="2">Check back daily for updates (Last updated: May 1996)</font>
+                    </div>
+                </div>
+            </div>
+
+            <div class="retro-outset" style="margin-top: 20px;">
+                <h3>The Badge Wall (Community)</h3>
+                <div class="retro-hr"></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 10px;">
+                    <img src="https://cyber.dabamos.de/88x31/notepad.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/linux_powered.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/html_valid.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/cssvalid.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/debian-linux.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/valid-xhtml10.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/ie_logo.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/built_notepad.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/netscape4.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/getfirefox.gif" width="88" height="31">
+                </div>
+            </div>
+
+            <div class="retro-outset" style="margin-top: 20px;">
+                <h3>Sign My Guestbook</h3>
+                <div class="retro-hr"></div>
+                <form id="guestbook-form" class="retro-inset">
+                    Name: <input type="text" id="gb-name" style="width: 150px; font-family: monospace;"><br>
+                    Message: <br>
+                    <textarea id="gb-msg" style="width: 95%; height: 60px; font-family: monospace;" required></textarea><br>
+                    <button type="submit" class="retro-button">POST MESSAGE</button>
+                    <a href="mailto:webmaster@miuiga.com" class="retro-button" style="text-decoration:none;">
+                        <img src="https://cyber.dabamos.de/88x31/email.gif" alt="Mail Me" style="vertical-align: middle;"> MAIL ME
+                    </a>
+                </form>
+                <div id="guestbook-entries" style="margin-top: 15px; max-height: 250px; overflow-y: auto; padding: 5px;">
+                    <!-- Entries will appear here -->
+                </div>
+            </div>
+
+            <div class="retro-outset" style="margin-top: 20px; text-align: center;">
+                <h3>Visitor Statistics</h3>
+                <div class="visitor-counter" id="visitor-counter">000000</div>
+                <p>Since the dawn of time, this page has been seen <span id="visit-text">...</span>!</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 20px;">
+                <img src="https://cyber.dabamos.de/88x31/800x600.gif" alt="Best Viewed in 800x600">
+                <br>
+                <font size="2" color="white">
+                    &copy; 1996-2026 MIUIGA Corp. | All Rights Reserved | 
+                    <a href="#" style="color: cyan;">Terms of Service</a>
+                </font>
+            </div>
+
+        </div> <!-- End frame-main -->
+
+    </div> <!-- End frameset-container -->
+
+    <script src="src/scripts/main.js"></script>
+</body>
+</html>
