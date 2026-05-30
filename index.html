@@ -3,54 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIUIGA Framework - The Deep Retro Experience</title>
+    <title>The Webmaster's Cyber-Log - Powered by MIUIGA</title>
     <link rel="stylesheet" href="src/styles/core.css">
     <style>
-        /* Specific page adjustments for the frameset look */
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Handled by frameset container */
+            overflow: hidden; /* Main frameset wrapper manages scrolling */
         }
         .nav-item {
             width: 150px;
             margin: 10px auto;
             text-align: center;
         }
-        .construction-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
+        .post-meta {
+            font-size: 11px;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+        .post-footer {
+            border-top: 1px dashed var(--web-border-dark);
+            margin-top: 15px;
+            padding-top: 5px;
+            font-size: 11px;
+            font-weight: bold;
         }
     </style>
 </head>
-<body class="bg-stars"> <!-- Default background -->
+<body class="bg-stars">
 
     <div class="frameset-container">
         
-        <!-- LEFT FRAME: NAVIGATION & WIDGETS -->
+        <!-- LEFT FRAME: NAVIGATION & SIDEBAR CONTENT -->
         <div class="frame-left retro-outset">
             <center>
                 <img src="https://cyber.dabamos.de/88x31/miuiga_logo_placeholder.gif" alt="MIUIGA" style="margin-top: 10px; background: #000; padding: 5px;">
-                <h2 style="font-size: 18px; color: blue;">MENU</h2>
+                <h2 style="font-size: 16px; color: #0000ff;">CYBER-LOG</h2>
                 <hr class="rainbow-bar">
             </center>
 
             <div class="nav-item">
-                <a href="#" class="retro-button" style="width: 100%;">HOME</a>
+                <a href="#" class="retro-button" style="width: 100%;">HOME (BLOG)</a>
             </div>
             <div class="nav-item">
-                <a href="#" class="retro-button" style="width: 100%;">SITEMAP</a>
+                <a href="#comments-section" class="retro-button" style="width: 100%;">GUESTBOOK</a>
             </div>
             <div class="nav-item">
-                <a href="#" class="retro-button" style="width: 100%;">RESOURCES</a>
+                <a href="#archive-section" class="retro-button" style="width: 100%;">ARCHIVES</a>
             </div>
             <div class="nav-item">
-                <a href="#" class="retro-button" style="width: 100%;">GUESTBOOK</a>
+                <button class="retro-button" onclick="openWindow('demo-retro-window')" style="width: 100%;">SHOW ALERT</button>
+            </div>
+            <div class="nav-item">
+                <button class="retro-button" onclick="toggleModernMode()" style="width: 100%; font-weight: bold; background: #ffff00;">MODERN MODE</button>
             </div>
 
-            <center style="margin-top: 30px;">
+            <!-- MEDIA PLAYER WIDGET -->
+            <center style="margin-top: 25px;">
                 <div class="player-box">
                     <div id="player-status">STOPPED</div>
                     <div class="visualizer">
@@ -66,91 +75,256 @@
                     </div>
                 </div>
 
+                <!-- THEME CONTROLLERS -->
                 <div style="margin-top: 20px;">
-                    <font size="2"><b>SELECT THEME:</b></font><br>
-                    <button class="retro-button bg-toggle" data-bg="bg-stars" style="font-size: 9px;">STARS</button>
-                    <button class="retro-button bg-toggle" data-bg="bg-paper" style="font-size: 9px;">PAPER</button>
-                    <button class="retro-button bg-toggle" data-bg="bg-clouds" style="font-size: 9px;">CLOUDS</button>
-                    <button class="retro-button bg-toggle" data-bg="bg-marble" style="font-size: 9px;">MARBLE</button>
+                    <font size="2"><b>THEME TILES:</b></font><br>
+                    <button class="retro-button bg-toggle" data-bg="bg-stars" style="font-size: 9px; margin-top: 3px;">STARS</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-paper" style="font-size: 9px; margin-top: 3px;">PAPER</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-clouds" style="font-size: 9px; margin-top: 3px;">CLOUDS</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-marble" style="font-size: 9px; margin-top: 3px;">MARBLE</button>
+                    <button class="retro-button bg-toggle" data-bg="bg-nebula" style="font-size: 9px; margin-top: 3px;">NEBULA</button>
                 </div>
 
+                <!-- AOL BUDDY LIST WIDGET -->
+                <div class="retro-inset" style="width: 150px; margin: 20px auto; padding: 5px; background: #ffffff; border: 2px solid var(--web-border-dark); text-align: left; box-shadow: 1px 1px 0px #000;">
+                    <div style="background: var(--web-bg); color: #ffffff; padding: 2px 5px; font-weight: bold; font-family: Arial, sans-serif; font-size: 11px; display: flex; justify-content: space-between; align-items: center; text-shadow: none;">
+                        <span>Buddy List</span>
+                        <span style="font-size: 9px; cursor: pointer;" onclick="alert('Cannot close buddy list!')">X</span>
+                    </div>
+                    <div style="font-family: monospace; font-size: 10px; padding: 5px 2px; max-height: 90px; overflow-y: auto; color: #000000;">
+                        <b>Buddies Online (3/5)</b>
+                        <div style="margin-left: 5px; color: #009900;">• crackbunnies</div>
+                        <div style="margin-left: 5px; color: #009900;">• NetRider95</div>
+                        <div style="margin-left: 5px; color: #009900;">• CyberQueen</div>
+                        <b>Offline (2)</b>
+                        <div style="margin-left: 5px; color: #999999;">• ubergrommets</div>
+                        <div style="margin-left: 5px; color: #999999;">• Tuval</div>
+                    </div>
+                    <div style="display: flex; gap: 2px; margin-top: 5px; justify-content: center;">
+                        <button class="retro-button" style="font-size: 8px; padding: 1px 3px;" onclick="alert('Sending Instant Message...')">IM</button>
+                        <button class="retro-button" style="font-size: 8px; padding: 1px 3px;" onclick="alert('Opening Chat Room...')">CHAT</button>
+                    </div>
+                </div>
+
+                <!-- IAB VERTICAL SPONSOR BANNER (120x240) -->
+                <div style="margin-top: 25px;">
+                    <font size="1" color="#000000"><b>SPONSOR AD</b></font>
+                    <div class="iab-ad-container iab-vertical-banner" style="flex-direction: column; padding: 10px; display: flex; justify-content: center; align-items: center;">
+                        <span class="blink" style="color: #ff00ff; font-weight: bold; font-size: 11px;">WIN A NINTENDO 64!</span>
+                        <spacer-gif y="15"></spacer-gif>
+                        <font size="1" color="#000000">Punch the Goomba!</font>
+                        <spacer-gif y="10"></spacer-gif>
+                        <button class="retro-button" style="font-size: 9px;" onclick="alert('Oops! The Goomba dodged! Try again!')">PUNCH</button>
+                    </div>
+                </div>
+
+                <!-- AFFILIATE BADGES -->
                 <div style="margin-top: 30px;">
-                    <img src="https://cyber.dabamos.de/88x31/netscape_now.gif" width="88" height="31">
+                    <img src="https://cyber.dabamos.de/88x31/netscape_now.gif" width="88" height="31" alt="Netscape">
                     <br>
-                    <img src="https://cyber.dabamos.de/88x31/internet_explorer.gif" width="88" height="31" style="margin-top: 5px;">
+                    <img src="https://cyber.dabamos.de/88x31/internet_explorer.gif" width="88" height="31" style="margin-top: 5px;" alt="IE">
+                    <br>
+                    <img src="https://cyber.dabamos.de/88x31/linux_powered.gif" width="88" height="31" style="margin-top: 5px;" alt="Linux">
                 </div>
             </center>
         </div>
 
-        <!-- MAIN FRAME: CONTENT -->
+        <!-- MAIN FRAME: BLOG CONTENT & FEEDS -->
         <div class="frame-main bg-stars">
             
+            <!-- HEADER SECTION -->
             <div class="retro-outset" style="text-align: center; margin-bottom: 20px;">
-                <h1 style="margin: 0;"><font color="red">M</font>ake <font color="blue">I</font>nternet <font color="green">U</font>I <font color="orange">G</font>reat <font color="red">A</font>gain <font color="orange">V2.0</font></h1>
-                <p class="blink" style="background: yellow; display: inline-block; padding: 2px 10px; border: 1px solid black;">
-                    *** THE DEFINITIVE WEB 1.0 FRAMEWORK ***
+                <h1 style="margin: 0;"><font color="#ff0000">T</font>he <font color="#0000ff">W</font>ebmaster's <font color="#009900">C</font>yber-<font color="#ff9900">L</font>og</h1>
+                <p class="blink" style="background: #ffff00; display: inline-block; padding: 2px 10px; border: 1px solid black; font-weight: bold;">
+                    *** ESSAYS, IDEAS, AND BEVELS FROM THE SILICON TRENCHES ***
                 </p>
             </div>
 
+            <!-- NEWS MARQUEE -->
             <div class="marquee-container">
                 <div class="marquee-content">
-                    MIUIGA DEEP RETRO UPDATE RELEASED! | NEW THEMES ADDED! | CHECK OUT THE RAINBOW BARS! | DON'T FORGET TO SIGN THE GUESTBOOK! | 100% PURE HTML/CSS/JS!
+                    LATEST POSTS: THE ANIMATED GIF DEBATE | COMIC SANS REDEMPTION | FLAT DESIGN CONSPIRACY REVEALED | REMEMBER TO SIGN THE GUESTBOOK AT THE BOTTOM!
                 </div>
             </div>
 
+            <!-- BREADCRUMB PATHWAY -->
+            <div class="retro-inset" style="margin: 10px 0; font-family: monospace; font-size: 11px; padding: 5px 10px; color: var(--web-text);">
+                CURRENT PATH: <a href="#" style="color: var(--web-link);">Home</a> &gt;&gt; <a href="#" style="color: var(--web-link);">Essays</a> &gt;&gt; <b style="color: var(--web-text);">Cyber-Log Index</b>
+            </div>
+
+            <!-- IAB FULL BANNER (468x60) AD INTRUSION -->
+            <center style="margin: 15px 0;">
+                <div class="iab-ad-container iab-full-banner">
+                    <span class="blink" style="color: #ff0000; font-weight: bold; font-size: 12px;">*** CONGRATULATIONS! YOU ARE THE 999,999th VISITOR! CLICK HERE FOR A FREE IPOD! ***</span>
+                </div>
+            </center>
+
+            <!-- DRAGGABLE OS-STYLE POPUP WINDOW -->
+            <div class="retro-window" id="demo-retro-window" style="display: block;">
+                <div class="window-title-bar">
+                    <span class="window-title">Cyber-Log Security System</span>
+                    <button class="window-close-btn" onclick="closeWindow('demo-retro-window')">X</button>
+                </div>
+                <div class="window-content">
+                    <p style="margin: 0 0 10px 0;"><b>Hello, Cyber-Traveler!</b></p>
+                    <p style="margin: 0 0 15px 0; font-size: 12px;">You are accessing a node using the 216 Web-Safe palette. Drag this OS dialog bar or close it to unlock the feed.</p>
+                    <center>
+                        <button class="retro-button" onclick="closeWindow('demo-retro-window')" style="min-width: 60px;">OK</button>
+                    </center>
+                </div>
+            </div>
+
+            <!-- BLOG POST 1: SERIF STACK (Times New Roman default) -->
             <div class="retro-outset" style="margin-top: 20px;">
-                <h2>Welcome to my Digital Fortress!</h2>
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <div class="retro-inset" style="padding: 2px; background: #cccccc; flex-shrink: 0; width: 44px; height: 31px; display: flex; align-items: center; justify-content: center; border: 1px solid #000;">
+                        <img src="https://cyber.dabamos.de/88x31/notepad.gif" width="44" height="31" alt="Avatar" style="image-rendering: pixelated; border: 1px solid #000;">
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; font-size: 20px;">The Death of the Animated GIF (And Why We Must Fight Back)</h2>
+                        <div class="post-meta" style="margin: 2px 0 0 0;">Filed under: Webmaster Rants | Posted on: May 30, 1996</div>
+                    </div>
+                </div>
                 <div class="retro-hr"></div>
                 
                 <p>
-                    You have entered the <b>MIUIGA DEEP RETRO</b> experience. This framework is the result of extensive 
-                    archaeological research into the Geocities era. No rounded corners, no flat design, just pure 
-                    3D bevels and clashing textures.
+                    They say the GIF format is dead. They say Unisys patents will strangle the free web. But we say <i>no!</i> 
+                    Without the animated blinking mailbox, the spinning under construction signs, and the rotating glowing email icons, the web will become a quiet, corporate, lifeless wasteland of static grids.
+                </p>
+                <p>
+                    As builders of cyberspace, we have an obligation to safeguard these animations. Support the LZW-free initiatives, but do not dump your badges!
                 </p>
 
-                <div class="retro-inset" style="padding: 15px;">
-                    <p><b>WEBMASTER NOTES:</b></p>
-                    <ul>
-                        <li>Frameset layout for that authentic navigation feel.</li>
-                        <li>Pixel-perfect 88x31 badges from archived collections.</li>
-                        <li>High-contrast tiled backgrounds (Toggle them in the menu!).</li>
-                        <li>Custom scrollbars styled after classic browser UI.</li>
-                    </ul>
+                <!-- SPACER GIF DEMONSTRATION -->
+                <div>
+                    <font size="1" color="#666666"><i>Footnote separator spaced using &lt;spacer-gif&gt;:</i></font><br>
+                    <spacer-gif y="15" style="background: #ff0000; display: inline-block;" title="Visualized 15px Vertical Spacer (red for visibility)"></spacer-gif>
                 </div>
 
-                <div class="construction-box">
-                    <img src="https://pixelmoondust.neocities.org/backgrounds/themed/stars/starfield_1.gif" style="display:none;"> <!-- Preload concept -->
-                    <img src="https://cyber.dabamos.de/88x31/under_construction.gif" alt="Under Construction">
-                    <div>
-                        <b class="blink">SITE UNDER CONSTRUCTION!</b><br>
-                        <font size="2">Check back daily for updates (Last updated: May 1996)</font>
+                <p style="font-size: 12px; font-style: italic;">
+                    Keep the internet alive. Stand tall against flat textures.
+                </p>
+
+                <div class="post-footer">
+                    POSTED BY: webmaster | CATEGORY: Web Dev | COMMENTS: 2
+                </div>
+
+                <!-- MOCK COMMENTS SECTION -->
+                <div style="margin-top: 15px; padding-left: 20px;">
+                    <font size="2"><b>Comments:</b></font>
+                    <div class="retro-inset" style="margin-top: 5px; font-size: 12px;">
+                        <b>NetRider95</b> says: <br>
+                        "Preach, Webmaster! They will pry my rotating skull GIFs from my cold, dead hands! Excellent article!"
+                        <div style="font-size: 10px; color: gray;">5/30/1996, 2:14 PM</div>
+                    </div>
+                    <div class="retro-inset" style="margin-top: 5px; font-size: 12px;">
+                        <b>CyberQueen</b> says: <br>
+                        "Great site! Added your banner to my webring. Can you add a background MIDI soundtrack to this page?"
+                        <div style="font-size: 10px; color: gray;">5/30/1996, 4:45 PM</div>
                     </div>
                 </div>
             </div>
 
-            <div class="retro-outset" style="margin-top: 20px;">
-                <h3>The Badge Wall (Community)</h3>
+            <!-- BLOG POST 2: COMIC SANS STACK -->
+            <div class="retro-outset font-comic" style="margin-top: 20px;">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <div class="retro-inset" style="padding: 2px; background: #cccccc; flex-shrink: 0; width: 44px; height: 31px; display: flex; align-items: center; justify-content: center; border: 1px solid #000;">
+                        <img src="https://cyber.dabamos.de/88x31/ie_logo.gif" width="44" height="31" alt="Avatar" style="image-rendering: pixelated; border: 1px solid #000;">
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; font-size: 20px;">Comic Sans MS: The Peak of Human Typography</h2>
+                        <div class="post-meta" style="margin: 2px 0 0 0;">Filed under: Design Ethics | Posted on: April 15, 1996</div>
+                    </div>
+                </div>
                 <div class="retro-hr"></div>
-                <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 10px;">
-                    <img src="https://cyber.dabamos.de/88x31/notepad.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/linux_powered.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/html_valid.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/cssvalid.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/debian-linux.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/valid-xhtml10.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/ie_logo.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/built_notepad.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/netscape4.gif" width="88" height="31">
-                    <img src="https://cyber.dabamos.de/88x31/getfirefox.gif" width="88" height="31">
+                
+                <p>
+                    why do all corporate sites use serif or boring helper text? typography should have personality! 
+                    Comic Sans MS represents friendliness, approachable designs, and the warmth of human handwriting. 
+                    it lets your readers know that there is a real person behind the keyboard, not a corporate robot!
+                </p>
+                <p>
+                    we enforce un-smoothed rendering here so you see the raw, jagged font pixels in all their glorious fidelity!
+                </p>
+
+                <div class="post-footer">
+                    POSTED BY: webmaster | CATEGORY: Rants | COMMENTS: 0
                 </div>
             </div>
 
-            <div class="retro-outset" style="margin-top: 20px;">
-                <h3>Sign My Guestbook</h3>
+            <!-- BLOG POST 3: VERDANA STACK -->
+            <div class="retro-outset font-verdana" style="margin-top: 20px;">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <div class="retro-inset" style="padding: 2px; background: #cccccc; flex-shrink: 0; width: 44px; height: 31px; display: flex; align-items: center; justify-content: center; border: 1px solid #000;">
+                        <img src="https://cyber.dabamos.de/88x31/debian-linux.gif" width="44" height="31" alt="Avatar" style="image-rendering: pixelated; border: 1px solid #000;">
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; font-size: 20px;">Why Flat Design is a Corporate Conspiracy</h2>
+                        <div class="post-meta" style="margin: 2px 0 0 0;">Filed under: Cyber Conspiracy | Posted on: March 1, 1996</div>
+                    </div>
+                </div>
+                <div class="retro-hr"></div>
+                
+                <p>
+                    Mark my words: the disappearance of 3D beveled borders is not a stylistic evolution; it is a corporate scheme to minimize graphics caching. They want to train your eyes to accept low-detail layouts so you buy low-bandwidth subscription services!
+                </p>
+                <p>
+                    By stripping away the highlights and shadows, they make the web feel flat, un-interactive, and corporate. Resist the flat takeover! Keep your panels beveled.
+                </p>
+
+                <div class="post-footer">
+                    POSTED BY: webmaster | CATEGORY: Conspiracy | COMMENTS: 0
+                </div>
+            </div>
+
+            <!-- MODERN TABLE LAYOUT EMULATION SECTION -->
+            <div id="archive-section" class="retro-outset" style="margin-top: 20px;">
+                <h3>Blog Archive Matrix (CSS Grid Table)</h3>
+                <div class="retro-hr"></div>
+                <p>This index table is constructed with modern CSS Grid (<code>.retro-table-layout</code>) emulating classic nested <code>&lt;table cellspacing="2" cellpadding="5"&gt;</code> spacing. Toggle the debugging border below to see it align.</p>
+                
+                <center style="margin-bottom: 15px;">
+                    <button class="retro-button" onclick="toggleTableDebug()">TOGGLE TABLE BORDER DEBUG (border="1")</button>
+                </center>
+
+                <div class="retro-table-layout" style="grid-template-columns: 120px 1fr 100px;">
+                    <div class="retro-table-cell" style="font-weight: bold; background: #999999;">DATE</div>
+                    <div class="retro-table-cell" style="font-weight: bold; background: #999999;">POST HEADER</div>
+                    <div class="retro-table-cell" style="font-weight: bold; background: #999999;">CATEGORY</div>
+
+                    <div class="retro-table-cell">1996-05-30</div>
+                    <div class="retro-table-cell">The Death of the Animated GIF (And Why We Must Fight Back)</div>
+                    <div class="retro-table-cell">Web Dev</div>
+
+                    <div class="retro-table-cell">1996-04-15</div>
+                    <div class="retro-table-cell">Comic Sans MS: The Peak of Human Typography</div>
+                    <div class="retro-table-cell">Rants</div>
+
+                    <div class="retro-table-cell">1996-03-01</div>
+                    <div class="retro-table-cell">Why Flat Design is a Corporate Conspiracy</div>
+                    <div class="retro-table-cell">Conspiracy</div>
+                </div>
+
+                <!-- IAB HALF BANNER (234x60) AD INTRUSION -->
+                <center style="margin: 20px 0 10px 0;">
+                    <div class="iab-ad-container iab-half-banner" style="background: #000000; color: #00ff00;">
+                        <div>&lt;-- DOWNLOAD MORE MEMORY --&gt;</div>
+                    </div>
+                </center>
+            </div>
+
+            <!-- INTERACTIVE COMMENTS/GUESTBOOK SECTION -->
+            <div id="comments-section" class="retro-outset" style="margin-top: 20px;">
+                <center>
+                    <h2 style="font-family: serif; color: #ff0000; font-size: 24px; text-shadow: 2px 2px 0px #000; letter-spacing: 1px; margin: 5px 0; font-weight: bold; line-height: 1.2;">
+                        ** Please Feel Free To Sign **<br>
+                        <span style="color: #00ff00; font-size: 32px; font-style: italic; font-weight: bold;">** My Guestbook **</span>
+                    </h2>
+                </center>
                 <div class="retro-hr"></div>
                 <form id="guestbook-form" class="retro-inset">
                     Name: <input type="text" id="gb-name" style="width: 150px; font-family: monospace;"><br>
-                    Message: <br>
+                    Comment: <br>
                     <textarea id="gb-msg" style="width: 95%; height: 60px; font-family: monospace;" required></textarea><br>
                     <button type="submit" class="retro-button">POST MESSAGE</button>
                     <a href="mailto:webmaster@miuiga.com" class="retro-button" style="text-decoration:none;">
@@ -158,16 +332,34 @@
                     </a>
                 </form>
                 <div id="guestbook-entries" style="margin-top: 15px; max-height: 250px; overflow-y: auto; padding: 5px;">
-                    <!-- Entries will appear here -->
+                    <!-- New guestbook comments will load dynamically here -->
                 </div>
             </div>
 
+            <!-- WEBRING WIDGET -->
+            <div class="retro-outset" style="margin-top: 20px; text-align: center;">
+                <h3>MIUIGA Webring Network</h3>
+                <div class="retro-hr"></div>
+                <p>This node is a registered member of the MIUIGA Algorithmic Webring.</p>
+                <div class="retro-inset" style="padding: 10px; margin: 10px auto; max-width: 400px; display: inline-block;">
+                    <font size="2">Current Site: <b id="webring-current-name" style="color: #000099;">Finding node...</b></font>
+                </div>
+                <br>
+                <div style="margin-top: 10px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="#" id="webring-prev" class="retro-button">&lt;&lt; PREV NODE</a>
+                    <a href="#" id="webring-random" class="retro-button">RANDOM NODE</a>
+                    <a href="#" id="webring-next" class="retro-button">NEXT NODE &gt;&gt;</a>
+                </div>
+            </div>
+
+            <!-- VISITOR STATISTICS -->
             <div class="retro-outset" style="margin-top: 20px; text-align: center;">
                 <h3>Visitor Statistics</h3>
                 <div class="visitor-counter" id="visitor-counter">000000</div>
                 <p>Since the dawn of time, this page has been seen <span id="visit-text">...</span>!</p>
             </div>
 
+            <!-- FOOTER SIGNATURE -->
             <div style="text-align: center; margin-top: 40px; padding: 20px;">
                 <img src="https://cyber.dabamos.de/88x31/800x600.gif" alt="Best Viewed in 800x600">
                 <br>
