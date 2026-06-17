@@ -1,0 +1,18 @@
+# Make Internet UI Great Again (MIUIGA)
+
+> A retro React component library dedicated to reclaiming the internet from minimalist design.
+
+## Documentation
+- [README.md](/README.md): Overview, installation, and basic usage.
+- [AGENTS.md](/AGENTS.md): Essential rules, implementation conventions, and philosophy for AI agents.
+- [MANIFEST.md](/MANIFEST.md): The core vision and design principles of the framework.
+
+## Component Library Reference
+- [src/lib/index.ts](/src/lib/index.ts): Main entry point and exports.
+- [src/lib/components/RetroProvider.tsx](/src/lib/components/RetroProvider.tsx): Theme and state management.
+- [src/lib/components/Layout/Frameset.tsx](/src/lib/components/Layout/Frameset.tsx): Responsive frame layout.
+- [src/lib/components/DitherShadow.tsx](/src/lib/components/DitherShadow.tsx): 1-bit stippled shadow system.
+- [src/lib/utils/colors.ts](/src/lib/utils/colors.ts): Web-safe color snapping logic.
+
+## Resources
+- [Full Context](/llms-full.txt): Complete project documentation in one file.
