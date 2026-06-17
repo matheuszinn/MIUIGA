@@ -15,7 +15,11 @@
     "./style.css": "./dist/style.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "llms.txt",
+    "llms-full.txt",
+    "AGENTS.md",
+    "MANIFEST.md"
   ],
   "scripts": {
     "dev": "vite",
