@@ -5,6 +5,9 @@ MIUIGA is a React component library dedicated to reclaiming the internet from th
 ## Features
 
 - **Retro Aesthetic**: 3D bevels, high-contrast textures, and animated GIFs.
+- **Dithered Shadows**: Authentic 1-bit stippled shadows with `<DitherShadow>`.
+- **Responsive Framesets**: Flexible, mobile-aware layout system via `<Frameset>`, `<Frame>`, and `<Taskbar>`.
+- **Web-Safe Palette**: Built-in utilities for snapping colors to the 1996 browser standard.
 - **Reusable React Components**: `<Button>`, `<Panel>`, `<Window>`, `<Marquee>`, and more.
 - **Theme Support**: Easily toggle between classic 90s Geocities and early 2010s "Frutiger Aero" styles via `<RetroProvider>`.
 - **Zero Configuration**: Comes with pre-bundled styles.
@@ -39,8 +42,10 @@ const App = () => (
 ## Available Components
 
 - `RetroProvider`: Required wrapper for theme and state management.
+- `Frameset`, `Frame`, `MainFrame`, `Taskbar`: The responsive layout system.
+- `DitherShadow`: Applies a stippled shadow effect to any element.
 - `Button`: Classic bevelled button.
-- `Panel`: Layout container with `outset` (3D protruding) or `inset` (3D recessed) variants.
+- `Panel`: Layout container with `outset` or `inset` variants.
 - `Window`: Draggable, closable OS-style window.
 - `Marquee`: Traditional scrolling text.
 - `VisitorCounter`: LocalStorage-backed digital odometer.

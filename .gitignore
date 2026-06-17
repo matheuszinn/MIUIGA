@@ -4,3 +4,4 @@ reference_images/
 # OS-specific files
 .DS_Store
 Thumbs.db
+node_modules\ndist

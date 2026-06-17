@@ -1,0 +1,1 @@
+{"version":3,"file":"Taskbar.d.ts","sourceRoot":"","sources":["../../../src/lib/components/Layout/Taskbar.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAI1B,UAAU,YAAY;IACpB,MAAM,EAAE;QAAE,EAAE,EAAE,MAAM,CAAC;QAAC,KAAK,EAAE,MAAM,CAAC;QAAC,IAAI,CAAC,EAAE,MAAM,CAAA;KAAE,EAAE,CAAC;CACxD;AAED,eAAO,MAAM,OAAO,EAAE,KAAK,CAAC,EAAE,CAAC,YAAY,CAiC1C,CAAC"}
