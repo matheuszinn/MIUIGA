@@ -1,0 +1,1 @@
+{"version":3,"file":"Marquee.d.ts","sourceRoot":"","sources":["../../src/lib/components/Marquee.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,EAAE,cAAc,EAAE,MAAM,OAAO,CAAC;AAE9C,UAAU,YAAa,SAAQ,cAAc,CAAC,cAAc,CAAC;IAC3D,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB;AAED,eAAO,MAAM,OAAO,EAAE,KAAK,CAAC,EAAE,CAAC,YAAY,CAQ1C,CAAC"}
